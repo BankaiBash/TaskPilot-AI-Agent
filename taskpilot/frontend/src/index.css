@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --accent-color: #8b5cf6;
+  --focus-color: #38bdf8;
+  --scrollbar-thumb: #2e3248;
+  --scrollbar-track: #0c0e17;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #07080d;
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(139, 92, 246, 0.11), transparent 34%),
+    radial-gradient(circle at 88% 14%, rgba(56, 189, 248, 0.09), transparent 36%),
+    radial-gradient(circle at 50% 95%, rgba(99, 102, 241, 0.07), transparent 40%);
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Native HTML Switch styling (modern-web-guidance: switch) */
+input[type="checkbox"][switch] {
+  accent-color: var(--accent-color, #8b5cf6);
+  margin: 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"][switch]:focus-visible {
+  outline: 3px solid var(--focus-color, #38bdf8);
+  outline-offset: 4px;
+}
+
+/* Native Modal Dialog scroll containment (modern-web-guidance: dialog) */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgba(5, 6, 11, 0.78);
+  backdrop-filter: blur(6px);
+}
+
+/* Custom Scrollbar styling (modern-web-guidance: customize-scrollbar-color-and-thickness) */
+.scroller {
+  --scrollbar-thumb: #2e3248;
+  --scrollbar-track: #0c0e17;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+
+@supports not (scrollbar-color: auto) {
+  .scroller::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scroller::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+  }
+
+  .scroller::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

@@ -1,0 +1,47 @@
+# Environment Variables, API Keys & Credentials
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+*.pem
+*.key
+credentials.json
+client_secret*.json
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/.venv/
+
+# Python Bytecode & Test Caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+**/.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js Dependencies & Build Artifacts
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+build/
+.vite/
+frontend/.vite/
+
+# Temporary Files, OS & Logs
+*.tmp
+*.temp
+*.bak
+*.swp
+*.log
+.DS_Store
+Thumbs.db
